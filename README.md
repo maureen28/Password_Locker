@@ -1,7 +1,7 @@
 ## Password Locker
 
 ## Description 
-Password locker is an application 
+Password locker is an application that helps users generate and store passwords for their accounts such as facebook, twitter, gmail etc The password locker runs on the terminal and uses short codes to navigate through it. When you launch the app, you get the following short codes:
 
 ## Author 
 Maureen Wairimu
@@ -10,8 +10,8 @@ Maureen Wairimu
 <ul>
 <li>Clone the repository </li>
 <li>Have python3.6 on your device</li>
-<li>Run the application in your terminal</li>
-<li></li>
+<li>Run the application in your terminal using ./run.py </li>
+<li>Once you run the App follow the instructions on the terminal </li>
 </ul>
 
 ## Technology
