@@ -30,9 +30,35 @@ class TestCredentials(unittest.TestCase):
     def tearDown(self):
         Credential.credential_list = []
 
-    def test_delete_user(self):
+    def test_delete_credential(self):
         self.new_credential.save_credential()
         test_credential = Credential('Miriam', 'Leo', 'lee@yahoo.com', '12pril')
         test_credential.save_credential()
         self.new_credential.delete_credential()  # Deleting a credential object
         self.assertEqual(len(Credential.credential_list), 1)
+
+    def find_credential_by_credentialName(self):
+        self.new_credential.save_credential()
+        test_credential = Credential('Miriam', 'Leo', 'lee@yahoo.com', '12pril')
+        test_credential.save_credential()
+
+        found_credential = Credential.find_by_credentialName('nimoh')
+        self.assertEqual(found_credential.credentialName, test_credential.credentialName)
+
+    def test_credential_exists(self):
+        """Checking if we can return a Boolean if we can't find the credential
+        """
+        self.new_credential.save_credential()
+        test_credential = Credential('Miriam', 'Leo', 'lee@yahoo.com', '12pril')
+        test_credential.save_credential()
+        
+        credential_exists = Credential.credential_exist('Miriam')
+        
+        self.assertTrue(credential_exists)
+        
+    def test_display_credential(self):
+        """ Reurn a list of all credentials saved"""
+        self.assertEqual(Credential.display_credential(), Credential.credential_list)
+
+if __name__ == "__main__":
+    unittest.main()
