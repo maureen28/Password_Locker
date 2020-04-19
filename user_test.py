@@ -7,8 +7,7 @@ class TestUser(unittest.TestCase):
     """ Defines test cases for the User class behavior """
 
     def setUp(self):
-        self.new_user = User('Mutahi', 'Kimani', 'mkimz',
-                             'mutahi@gmail.com', 'Mtuh123')
+        self.new_user = User('Mutahi', 'Kimani', 'mkimz', 'mutahi@gmail.com', 'Mtuh123')
 
     def test_init(self):
         self.assertEqual(self.new_user.firstName, 'Mutahi')
@@ -41,8 +40,20 @@ class TestUser(unittest.TestCase):
         self.new_user.save_user()
         test_user = User('Facebook', 'Moh', 'nimoh', '@foodie', 'foodzone')
         test_user.save_user()
+
         found_user = User.find_by_username('nimoh')
         self.assertEqual(found_user.userName, test_user.userName)
+
+    def test_user_exists(self):
+        """Checking if we can return a Boolean if we can't find the user
+        """
+        self.new_user.save_user()
+        test_user = User('Facebook', 'Moh', 'nimoh', '@foodie', 'foodzone')
+        test_user.save_user()
+        
+        user_exists = User.user_exist('nimoh')
+        
+        self.assertTrue(user_exists)
 
 if __name__ == "__main__":
     unittest.main()
