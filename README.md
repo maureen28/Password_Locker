@@ -1,7 +1,8 @@
 ## Password Locker
 
 ## Description 
-Password locker is an application that helps users generate and store passwords for their accounts such as facebook, twitter, gmail etc The password locker runs on the terminal and uses short codes to navigate through it. When you launch the app, you get the following short codes:
+Password locker is an application that helps users generate and store passwords for their accounts such as email, social media, entertainment or job portal accounts etc. 
+The password locker runs on the terminal and uses short codes to navigate through it. 
 
 ## Author 
 Maureen Wairimu
