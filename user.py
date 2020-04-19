@@ -16,3 +16,12 @@ class User:
         """ Save our user object to our user details
         """
         User.user_details.append(self)
+  
+    def delete_user(self):
+        User.user_details.remove(self)
+        
+    @classmethod
+    def find_by_username(cls, userName):
+        for user in cls.user_details:
+            if user.userName == userName:
+              return user
