@@ -54,6 +54,10 @@ class TestUser(unittest.TestCase):
         user_exists = User.user_exist('nimoh')
         
         self.assertTrue(user_exists)
+        
+    def test_display_users(self):
+        """ Reurn a list of all users saved"""
+        self.assertEqual(User.display_users(), User.user_details)
 
 if __name__ == "__main__":
     unittest.main()

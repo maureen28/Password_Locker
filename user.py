@@ -28,7 +28,14 @@ class User:
           
     @classmethod
     def user_exist(cls, userName):
+        """Check and view if the user exists in the user-details
+        """
         for user in cls.user_details:
             if user.userName == userName:
                return True
         return False
+    
+    @classmethod
+    def display_users(cls):
+        return cls.user_details
+        
