@@ -90,7 +90,7 @@ def main():
                 print('\n')
 
                 for user in display_users():
-                    print(f"{user.firstName} {user.lastName} .....{user.userName}")
+                    print(f"{user.firstName} {user.lastName} ..{user.userName}")
                     print('\n')
             else:
                     print('\n')
@@ -99,7 +99,7 @@ def main():
 
         elif short_code == 'lo':
 
-            print("Enter the username and password to login")
+            print("Enter the password to login")
             u_name = input()
             if check_user_exist(u_name):
                 search_user = find_user(u_name)
@@ -107,7 +107,7 @@ def main():
                 print(f"{search_user.userName} is logged in")
                 print()                         
 # credential
-                while True:
+            while True:
                     print("Use these short codes : cc- Create new credential,\n D -Display credentials, del - delete credential \n ex -Log out ")
                     short_code = input().lower()
          
@@ -129,33 +129,39 @@ def main():
 
                         save_credential(create_credentials(credential_name, user_name, email, password)) 
                         print ('\n')
-                        print(f"New user {credential_name} created")
+                        print(f"Your credentials  {credential_name} have been created")
                         print ('\n')
 
                     elif short_code == 'D':
                         if display_credential():
                             print("Here is your credential")
                             print('\n')
+                            
                             for credential in display_credential():
                                 print(f"Credential name:{credential.credential_name}  User name: {credential.user_name} Password:{credential.password}")
                                 print('\n')
                         else:
                             print('\n')
-                            print("You don't seem to have created any account yet")
+                            print("You don't seem to have created any credentials yet")
                             print('\n')
                             
-                    elif short_code == "del":
-                            if del_credential(credential):
-                                print("Are you sure you want to delete your account? ")
-                                print('\n')      
-                                for credential in del_credential(credential):
-                                        print(f"Credential name:{credential.credential_name} has been successfully deleted")
-                                        print('\n')
+                    # elif short_code == "del":
+                    #         if del_credential(credential):
+                    #             print("Are you sure you want to delete your account? ")
+                    #             print('\n')      
+                    #             for credential in del_credential(credential):
+                    #                     print(f"Credential name:{credential.credential_name} has been successfully deleted")
+                    #                     print('\n')
                                         
-                            else:
-                                print('\n')
-                                print("You might have put the wrong username or password. Please try again!")
-                                print('\n')
+                    #         else:
+                    #             print('\n')
+                    #             print("You might have put the wrong username or password. Please try again!")
+                    #             print('\n')
+                    elif short_code == "ex":
+                        print('\n')
+                        print(f"You have logged out your {credential_name} account")
+                        print('\n')
+                        break
                            
         elif short_code == "ex":
                     print(f"Thanks {user_name} for your time.I hope you enjoyed my service.Bye...")
