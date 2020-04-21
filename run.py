@@ -1,6 +1,7 @@
 #!/usr/bin/env python3.6
 
 from user import User
+
 from credentials import Credential
 
 # User
@@ -133,7 +134,7 @@ def main():
 						# 		print(" ")
 						# 		pass_choice = input('Enter your password: ')
 						# 		break
-						# else:
+						# 	else:
 						# 		pass_choice = generate_password()
 						# 		break
 							

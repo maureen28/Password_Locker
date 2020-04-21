@@ -57,7 +57,7 @@ pip
 <tr>
 <td>Display codes for navigation</td>
 <td><strong>Successful login</strong></td>
-<tdalign="right">Choose an option: cc - Create Credential, dc - Display Credentials, copy - Copy Credential, ex - exit</tdalign="right">
+<td>Choose an option: cc - Create Credential, dc - Display Credentials, copy - Copy Credential, ex - exit</td>
 </tr>
 <tr>
 <td >Display prompt for creating a credential</td>
