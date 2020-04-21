@@ -40,7 +40,4 @@ class User:
     def display_users(cls):
         return cls.user_details
         
-    @classmethod
-    def copy_password(cls, password):
-        user_found = User.find_by_password(password)
-        pyperclip.copy(user_found.password)
+    

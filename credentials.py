@@ -1,3 +1,4 @@
+import pyperclip
 class Credential:
     """Class that generates new instances of the credentials
     """
@@ -36,3 +37,8 @@ class Credential:
     @classmethod
     def display_credential(cls):
         return cls.credential_list
+    
+    # @classmethod
+	# def copy_credential(cls, credentialName):
+	# 	find_credential = Credential.find_by_credentialName(credentialName)
+	# 	return pyperclip.copy(find_credential.password)

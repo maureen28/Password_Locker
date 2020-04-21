@@ -57,8 +57,22 @@ class TestCredentials(unittest.TestCase):
         self.assertTrue(credential_exists)
         
     def test_display_credential(self):
-        """ Reurn a list of all credentials saved"""
+        """ Return a list of all credentials saved"""
         self.assertEqual(Credential.display_credential(), Credential.credential_list)
+        
+    # def test_copy_credential(self):
+	#     self.new_credential.save_credential()
+	# 	fb = Credential('Mir', 'Le', 'le@yahoo.com', '12pril')
+	# 	fb.save_credentials()
+  
+	# 	find_credential = None
+	# 	for credential in Credential.credential_list:
+	# 		find_credential = Credential.find_by_credentialName(credentialName)
+	# 			return pyperclip.copy(find_credential.password)
+
+	# 	Credential.copy_credential(self.new_credential.credentialName)
+	# 	self.assertEqual('12pril',pyperclip.paste())
+	# 	print(pyperclip.paste())
 
 if __name__ == "__main__":
     unittest.main()

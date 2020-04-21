@@ -47,15 +47,21 @@ def check_credential_exist(credentialName):
 def display_credential():
     return Credential.display_credential()
 
+# def copy_credential(credentialName):
+# 	'''
+# 	Function to copy a credentials details to the clipboard
+# 	'''
+# 	return Credential.copy_credential(credentialName)
+
 # Main
 def main():
-      print("Hello! Welcome to my Password Locker. What is your name?")
-      user_name = input()
+    print("Hello! Welcome to my Password Locker. What is your name?")
+    user_name = input()
+    
+    print(f"Hello {user_name}. Let's get you started with Password Locker")
+    print('\n')
 
-      print(f"Hello {user_name}. Let's get you started with Password Locker")
-      print('\n')
-
-      while True:
+    while True:
         print("Use these short codes : su- Sign up,\n  du -Display details,\n lo - login details \n ex -exit the Password Locker ")
         short_code = input().lower()
         
@@ -105,28 +111,32 @@ def main():
                 search_user = find_user(u_name)
                 print()
                 print(f"{search_user.userName} is logged in")
-                print()                         
-# credential
-            while True:
+                print()                        
+ 
+                while True:
                     print("Use these short codes : cc- Create new credential,\n D -Display credentials, del - delete credential \n ex -Log out ")
                     short_code = input().lower()
          
                     if short_code == 'cc':
                         print("Create your credentials")
-                        print("-"*100)
-                            
+                        print("-"*100)       
                         print("Credential name ...")
-                        credential_name = input()        
-                                
+                        credential_name = input()               
                         print("User name ...")
                         user_name = input()
-
                         print("Email address ...")
                         email = input()
                         
-                        print("Password ...")
-                        password = input()
-
+                        print("Please choose an option for entering a passsword: e - enter password \n gp- generate a password.")
+                        password = input('Enter an option: ')
+                        # if pass_choice == 'e':
+						# 		print(" ")
+						# 		pass_choice = input('Enter your password: ')
+						# 		break
+						# else:
+						# 		pass_choice = generate_password()
+						# 		break
+							
                         save_credential(create_credentials(credential_name, user_name, email, password)) 
                         print ('\n')
                         print(f"Your credentials  {credential_name} have been created")
@@ -146,7 +156,7 @@ def main():
                             print('\n')
                             
                     # elif short_code == "del":
-                    #         if del_credential(credential):
+                    #         if del_credential():
                     #             print("Are you sure you want to delete your account? ")
                     #             print('\n')      
                     #             for credential in del_credential(credential):
@@ -157,6 +167,15 @@ def main():
                     #             print('\n')
                     #             print("You might have put the wrong username or password. Please try again!")
                     #             print('\n')
+                                
+                    # elif short_code == 'copy':
+                    #             print('')
+                    #             chosen_site = input('Enter the credential name for the credential password to copy: ')
+                    #             copy_credential(chosen_site)
+                    #             print('')
+					#         else:
+					# 	        print('Oops! Wrong option entered. Try again.')
+
                     elif short_code == "ex":
                         print('\n')
                         print(f"You have logged out your {credential_name} account")
